@@ -12,83 +12,73 @@ body {
 }
 
 .container {
-    width: 400px;
-    height: 400px;
-    margin: 100px auto;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  border: 1px solid #000;
+  position: relative; /*c3 için gerekli*/
 }
 
-.c1 {background: salmon;}
-.c2 {background: lightblue;}
-.c3 {background: lightgreen;}
-.c4 {background: khaki;}
-.c5 {background: sandybrown;}
-.c6 {background: slateblue;}
-
-
-/*
-Find 6 ways to have the "Center me" text centered on X and Y.
-Horizontally and vertically.
-*/
-
-
-/* 1 */
-
+/* 1 - Flexbox ile*/
 .c1 {
-
+  background: salmon;
+  display: flex;
+  justify-content: center; /* Yatay merkezleme */
+  align-items: center; /* Dikey merkezleme */
 }
-.c1 h1 {
 
-}
-
-
-/* 2 */
-
+/* 2- Grid ile */
 .c2 {
-
+  background: lightblue;
+  display: grid;
+  place-items: center; /* Hem yatay hem dikey merkezleme */
 }
-.c2 h1 {
 
-}
-
-
-/* 3 */
-
+/* 3- Position ve Transform */
 .c3 {
-
+  background: lightgreen;
 }
-.c3 h1{
-
+.c3 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
-
-
-/* 4 */
+/* 4- Line-height ve text-align ile*/
 
 .c4 {
-
+  background: khaki;
+  height: 400px; /* Container'ın yüksekliği */
+  line-height: 400px; /* Container'ın yüksekliği ile aynı */
+  text-align: center; /* Yatay merkezleme */
 }
 .c4 h1 {
-
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal; /* Satır yüksekliğini sıfırla */
 }
 
-
-/* 5 */
-
+/* 5- Table-cell ve Vertical-align */
 .c5 {
-
+  background: sandybrown;
+  display: table; /*c5 i tablo gibi görünmesi için*/
+  width: 400px;
+  height: 400px;
 }
+
 .c5 h1 {
-
+  display: table-cell; /*Tablonun içindekinin hücre gibi davranması için*/
+  vertical-align: middle;
+  text-align: center;  /* Yatay merkezleme */
 }
-
-
-/* 6 */
-
+/* 6- Flexbox ve Margin-auto */
 .c6 {
-
+  background: slateblue;
+  display: flex;
 }
 .c6 h1 {
-
-} 
-
+  margin: auto;
+}
 
 
